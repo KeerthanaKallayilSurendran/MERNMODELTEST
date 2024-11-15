@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../../public/icon.png'
+import Logo from '../assets/icon.png'
 import { Button } from '@mui/material'
 const Nav = () => {
     return (
@@ -7,7 +7,6 @@ const Nav = () => {
             <div className='p-2'>
                 <img style={{ height: "50px" }} src={Logo} alt="" />
             </div>
-            <Button variant="contained">Logout</Button>
         </div>
     )
 }

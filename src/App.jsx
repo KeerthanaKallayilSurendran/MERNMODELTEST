@@ -12,6 +12,7 @@ function App() {
 
   return (
     <>
+      <Nav />
       <Routes>
         <Route path='/register' element={<Auth insideRegister={true} />} />
         <Route path='/login' element={<Auth insideLogin={true} />} />

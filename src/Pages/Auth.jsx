@@ -1,7 +1,7 @@
 import { Button, TextField } from '@mui/material'
 import { registerAPI, loginAPI } from '../Service/allApi'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Auth = ({ insideRegister }) => {
     const [inputData, setInputData] = useState({
@@ -74,9 +74,16 @@ const Auth = ({ insideRegister }) => {
                 <TextField sx={{ mt: 2 }} id="password" label="Password" variant="outlined" value={inputData.password} onChange={e => setInputData({ ...inputData, password: e.target.value })} />
                 {
                     insideRegister ?
-                        <Button onClick={handleRegister} variant="contained" sx={{ p: 2, mt: 2 }}>Register</Button>
+                        <div className='flex justify-center items-center flex-col'>
+                            <Button onClick={handleRegister} variant="contained" sx={{ p: 2, mt: 2 }}>Register</Button>
+                            <p className='pt-5'>Alerady a user? Please click here to  <Link to={'/login'} className='text-blue-500 font-semibold'>Login</Link> </p>
+                        </div>
+
                         :
-                        <Button onClick={handleLogin} variant="contained" sx={{ p: 2, mt: 2 }}>Login</Button>
+                        <div className='flex justify-center items-center flex-col'>
+                            <Button onClick={handleLogin} variant="contained" sx={{ p: 2, mt: 2 }}>Login</Button>
+                            <p className='pt-5'>You don't have account  <Link to={'/register'} className='text-blue-500 font-semibold'>Register</Link> </p>
+                        </div>
                 }
             </div>
         </div>
