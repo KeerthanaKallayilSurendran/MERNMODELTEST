@@ -12,3 +12,7 @@ export const loginAPI = async (reqBody) => {
 export const addMainTask = async (reqBody, reqHeader) => {
     return await commonApi("POST", `${SERVER_URL}/addTask`, reqBody, reqHeader)
 }
+
+export const getAllTaskAPI = async (reqHeader) => {
+    return await commonApi("GET", `${SERVER_URL}/viewMainTask`, {}, reqHeader)
+}
